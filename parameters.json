@@ -27,7 +27,7 @@
             "value": "vm-centro-test-edge-001"
         },
         "virtualMachineComputerName": {
-            "value": "vm-centro-test-"
+            "value": "AZRTDSOSEDGE01"
         },
         "virtualMachineRG": {
             "value": "rg-centro-admin-spoke-test-001"
