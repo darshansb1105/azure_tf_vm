@@ -14,16 +14,17 @@ variable "subnet_name" {
   default = "snet-centro-admin-test-spe2-004"
 }
 
-variable "os_type" {
-  description = "Operating System type (e.g., Linux or Windows)"
+variable "os_name" {
+  default =  "AZRTDSOSEDGE03"
 }
 
-variable "os_name" {
-  default =  "AZRTDSOSEDGE02"
+variable "vm_size" {
+  default =  "Standard_D8s_V3"
 }
+
 
 variable "disk_specification" {
-  default = "Standard SSD LRS"
+  default = "StandardSSD_LRS"
 }
 
 variable "username" {
@@ -31,4 +32,20 @@ variable "username" {
 }
 variable "password" {
   default = "L0C4L$dmin!_rtds"
+}
+
+variable "source_image" {
+  description = "The source image reference for the virtual machine."
+  type = object({
+    publisher = string
+    offer     = string
+    sku       = string
+    version   = string
+  })
+  default = {
+    publisher = "MicrosoftWindowsDesktop"
+    offer     = "Windows-10"
+    sku       = "win10-22h2-pro-g2"
+    version   = "latest"
+  }
 }
